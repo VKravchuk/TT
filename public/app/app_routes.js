@@ -1,10 +1,13 @@
 'use strict';
 
-app.config(function ($stateProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.when('', function ($state) {
+        $state.go('access');
+    });
     $stateProvider
-        .state('home', {
-            url: '/home',
-            templateUrl: 'app/homepageTpl.html',
-            controller: 'MainCtrl'
+        .state('access', {
+            url: '/access',
+            templateUrl: 'app/access/accessTpl.html',
+            controller: 'AccessCtrl'
         })
 });

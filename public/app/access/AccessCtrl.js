@@ -1,5 +1,7 @@
 'use strict';
 
-app.controller('AccessCtrl', function ($scope) {
-    $scope.hello = 'It work';
+app.controller('AccessCtrl', function ($scope, $http) {
+    $scope.login = function () {
+        
+    }
 });

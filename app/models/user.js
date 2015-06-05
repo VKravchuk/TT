@@ -18,9 +18,12 @@ var UserSchema = new mongoose.Schema({
 // Execute before each user.save() call
 UserSchema.pre('save', function(callback) {
     var user = this;
+    console.log(user.isNew);
 
     // Break out if the password hasn't changed
     if (!user.isModified('password')) return callback();
+
+    //todo check if user already exist
 
     // Password changed so we need to hash it
     bcrypt.genSalt(5, function(err, salt) {

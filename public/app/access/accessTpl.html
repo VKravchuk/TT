@@ -1,13 +1,15 @@
 <h1>Access</h1>
 
-<h2>Login</h2>
+<h2>Signup</h2>
 
 <form action="">
-    <label for="">
-        <input type="text"/>
+    <label>
+        Username
+        <input ng-model="username" type="text"/>
     </label>
-    <label for="">
-        <input type="password"/>
+    <label>
+        Password
+        <input ng-model="password" type="password"/>
     </label>
-    <button ng-click="login()"></button>
+    <button ng-click="signup()">Signup</button>
 </form>

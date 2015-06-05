@@ -9,10 +9,12 @@ exports.postUsers = function(req, res) {
     });
 
     user.save(function(err) {
-        if (err)
-            res.send(err);
-
-        res.json({ message: 'New beer drinker added to the locker room!' });
+        if (err){
+            res.status(422).send(err);
+        }
+        else{
+            res.json({ message: 'New beer drinker added to the locker room!' });
+        }
     });
 };
 
@@ -20,8 +22,9 @@ exports.postUsers = function(req, res) {
 exports.getUsers = function(req, res) {
     console.log(req.error);
     User.find(function(err, users) {
-        if (err)
+        if (err){
             res.send(err);
+        }
 
         res.json(users);
     });

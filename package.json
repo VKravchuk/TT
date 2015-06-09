@@ -19,6 +19,8 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-debug": "^2.0.1",
+    "gulp-linker": "^0.1.7"
   }
 }

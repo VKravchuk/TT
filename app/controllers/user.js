@@ -34,7 +34,7 @@ exports.authUser = function(req, res) {
         password = req.body.password;
     User.findOne( { username: username } ,function(err, user) {
         if (err){
-            return res.status(422).send(err);
+            return res.status(400).send(err);
         }
 
         // No user found with that username
@@ -44,7 +44,7 @@ exports.authUser = function(req, res) {
 
         // Make sure the password is correct
         user.verifyPassword(password, function(err, isMatch) {
-            if (err) { return res.status(422).send(err); }
+            if (err) { return res.status(400).send(err); }
 
             // Password did not match
             if (!isMatch) { return res.status(422).send({message: 'Password did not match'}); }

@@ -7,7 +7,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('access', {
             url: '/access',
-            templateUrl: 'app/access/accessTpl.html',
+            templateUrl: 'app/components/access/accessTpl.html',
             controller: 'AccessCtrl'
         })
 });

@@ -1,8 +1,8 @@
 'use strict';
 
 app.controller('AccessCtrl', function ($scope, $http) {
-    $scope.signup = function () {
-        $http.post('http://localhost:8080/api/users', {
+    $scope.login = function () {
+        $http.post('http://localhost:8080/api/auth', {
             username: $scope.username,
             password: $scope.password
         }).then(function (resp) {

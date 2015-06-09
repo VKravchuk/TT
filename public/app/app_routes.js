@@ -1,13 +1,20 @@
 'use strict';
 
-app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when('', function ($state) {
-        $state.go('access');
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $urlRouterProvider.when('/', function ($state) {
+        $state.go('access.login');
     });
+    $locationProvider.html5Mode(true);
     $stateProvider
         .state('access', {
             url: '/access',
-            templateUrl: 'app/components/access/accessTpl.html',
-            controller: 'AccessCtrl'
+            abstract: true,
+            template: '<div ui-view></div>',
+            controller: 'MainCtrl'
+        })
+        .state('access.login', {
+            url: '/login',
+            templateUrl: 'app/components/access/login/loginTpl.html',
+            controller: 'LoginCtrl'
         })
 });

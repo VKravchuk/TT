@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('AccessCtrl', function ($scope, $http) {
+app.controller('LoginCtrl', function ($scope, $http) {
     $scope.login = function () {
         $http.post('http://localhost:8080/api/auth', {
             username: $scope.username,

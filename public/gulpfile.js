@@ -13,6 +13,7 @@ const APP_JS_FILES = [
     "bower_components/angular-bootstrap/ui-bootstrap.min.js",
     "app/app.js",
     "app/app_routes.js",
+    "app/MainCtrl.js",
     "app/components/**/*.js",
     "app/shared/**/*.js"
 ];

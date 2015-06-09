@@ -22,6 +22,9 @@ module.exports = function(app, express) {
         .post(userController.postUsers)
         .get(authController.isAuthenticated, userController.getUsers);
 
+    router.route('/auth')
+        .post(userController.authUser);
+
 
     // application -------------------------------------------------------------
     app.get('', function(req, res) {
